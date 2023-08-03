@@ -1,26 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { nanoid } from "nanoid";
+import Work from "./components/pages/Work";
+import Home from "./components/pages/Home";
+import About from "./components/pages/About";
+import { Route, Routes } from "react-router-dom";
+import Projects from "./components/pages/Projects";
+import TechStack from "./components/pages/TechStack";
 
-function App() {
+const App = () => {
+  const routes = [
+    {
+      id: nanoid(),
+      path: "/",
+      component: <Home />,
+    },
+    {
+      id: nanoid(),
+      path: "/about",
+      component: <About />,
+    },
+    {
+      id: nanoid(),
+      path: "/work",
+      component: <Work />,
+    },
+    {
+      id: nanoid(),
+      path: "/projects",
+      component: <Projects />,
+    },
+    {
+      id: nanoid(),
+      path: "/tech-stack",
+      component: <TechStack />,
+    },
+  ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      {routes.map((item:any) => (
+        <Route key={item.id} path={item?.path} element={item?.component} />
+      ))}
+    </Routes>
   );
-}
+};
 
 export default App;
