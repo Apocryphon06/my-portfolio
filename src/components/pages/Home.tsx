@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { Fragment } from "react";
+import Header from "../common/Header";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <Fragment>
+      <Header />
+      Home
+    </Fragment>
+  );
+};
 
-export default Home
+export default Home;
