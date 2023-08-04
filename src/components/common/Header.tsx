@@ -1,18 +1,22 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { menuItems, socials } from "../../utils/helpers";
 
 const Header = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="relative flex flex-row justify-around items-center p-4 backdrop">
-      <img
+    <div className="relative flex flex-row justify-between items-center p-4 lg:w-[1024px] m-auto ">
+      {/* <img
         src="/images/gradient.svg"
         alt="gradient_shadow"
         className="absolute z-10 top-0"
-      />
+      /> */}
 
       <div className="z-20 flex flex-row items-center gap-10">
         {menuItems.map((item: any) => (
           <h1
+            onClick={() => navigate(item.link)}
             key={item.id}
             className="text-base cursor-pointer capitalize text-[#d9d9d9]"
           >

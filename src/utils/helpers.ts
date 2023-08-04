@@ -13,8 +13,8 @@ export const menuItems = [
   },
   {
     id: nanoid(),
-    name: "Notebook",
-    link: "#notebook",
+    name: "Blog",
+    link: "#blog",
   },
   {
     id: nanoid(),
